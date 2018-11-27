@@ -1,18 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pronto World</title>
-  <link rel="stylesheet" href="/styles/lib/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="/styles/style.css">
-</head>
-<body>
-  
-  <script src="/scripts/lib/jquery-3.3.1.js"></script>
-  <script src="/scripts/lib/bootstrap/bootstrap.bundle.js"></script>
-  <script src="/scripts/lib/fontawesome/all.js"></script>
-  <script src="/scripts/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pronto World</title>
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="main-header">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-2 my-3">
+              <img src="/assets/pronto-logo.svg" alt="pronto-logo">
+            </div>
+            <div class="col-10">
+              <div class="d-flex justify-content-end align-items-center">
+                <ul class="d-flex align-items-center list-unstyled main-nav">
+                  <li><a href="#">Log in</a></li>
+                  <li><a href="#" class="btn btn-warning btn-sm text-white">Sign Up</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <section class="masthead-curve">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="font-bold">Log in to Your Account</h1>
+            <p class="lead">Don't have an account? <a href="#"><strong>Create a free one here</strong></a></p>
+          </div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 786.67 45.48">
+        <defs>
+          <style>
+            .grey-curve {
+              fill: #f2f2f2;
+              fill-rule: evenodd;
+            }
+          </style>
+        </defs>
+        <title>grey-curve</title>
+        <g>
+          <g>
+            <path class="grey-curve" d="M786.67,45.48H0V25.68S91.73,0,212.54,0C324.69,0,461.89,25.68,574.05,25.68,694.9,25.68,786.67,0,786.67,0Z" />
+          </g>
+        </g>
+      </svg>
+    </section>
+    <section class="body-form-login">
+      <div class="container">
+        <div class="row">
+          <div class="col-10 offset-1">
+            <div class="card">
+              <form action="/" method="get">
+                <div class="form-group">
+                  <label for="emailInput">Email:</label>
+                  <input type="email" class="form-control" id="emailInput">
+                </div>
+                <div class="form-group">
+                  <label for="passwordInput">Password:</label>
+                  <input type="password" class="form-control" id="passwordInput">
+                </div>
+                <div class="d-flex align-items-center form-footer">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                  <span class="forgot-pw"><a href="#">Forgot your password?</a><br> Don't have an account? <a href="#">Create a free one here</a></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="white-curve-bottom-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 786.67 45.48">
+          <defs>
+            <style>
+              .white-curve-bottom {
+                fill: #fff;
+                fill-rule: evenodd;
+              }
+            </style>
+          </defs>
+          <title>white-curve-bottom</title>
+          <g>
+            <g>
+              <path class="white-curve-bottom" d="M0,0S91.77,25.68,212.62,25.68C324.77,25.68,462,0,574.12,0,694.94,0,786.67,25.68,786.67,25.68v19.8H0Z" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="main-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-3 col-md-3 main-footer-resources">
+              <h2 class="font-bold text-uppercase">Resources</h2>
+              <ul id="menu-footer-resources" class="list-unstyled">
+                <li class="menu-item">
+                  <a href="#">Contact Us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Careers</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">About Us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Pronto Blog</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Why Pronto</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3 col-md-3 main-footer-legal">
+              <h2 class="font-bold text-uppercase">Legal</h2>
+              <ul id="menu-footer-legal" class="list-unstyled">
+                <li class="menu-item">
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Terms of service</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Email Preferences</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3 col-md-3 main-footer-technical">
+              <h2 class="font-bold text-uppercase">Technical</h2>
+              <ul id="menu-footer-technical" class="list-unstyled">
+                <li class="menu-item">
+                  <a href="#">Support Center</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Submit a Support Ticket</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Platform Overview</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Integrations</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Operations &amp; Updates</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3 col-md-3 main-footer-connect">
+              <h2 class="font-bold text-uppercase">Connect</h2>
+              <ul id="menu-footer-connect" class="list-unstyled fa-ul social-list">
+                <li>
+                  <a href="#" target="_blank"><span class="fa-li"><i class="fab fa-facebook-f"></i></span> Facebook</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><span class="fa-li"><i class="fab fa-twitter"></i></span> Twitter</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><span class="fa-li"><i class="fab fa-linkedin-in"></i></span> LinkedIn</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><span class="fa-li"><i class="fab fa-google-plus-g"></i></span> Google+</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><span class="fa-li"><i class="fas fa-envelope"></i></span> Newsletter</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="second-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>More ways to contact Pronto: <a href="/contact-us/">Contact us</a>, <a href="#">schedule a call</a> or <a href="#">live chat</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6 col-md-5">
+              <p>&copy;2018 Pronto Marketing All Right Reserved.</p>
+            </div>
+            <div class="col-6 col-md-7 text-right">
+              <p>This website is built on the same great platform all of our clients enjoy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/scripts/lib/jquery-3.3.1.js"></script>
+    <script src="/scripts/lib/bootstrap/bootstrap.bundle.js"></script>
+    <script src="/scripts/lib/fontawesome/all.js"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
 </html>

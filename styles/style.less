@@ -1,0 +1,304 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+// Variables
+@link-color: #00adee;
+@link-color-hover: #008fc5;
+
+
+@font-face {
+  font-family: 'proxima_nova';
+  src: url('/assets/fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/proximanova-light-webfont.woff') format('woff'),
+  url('/assets/fonts/proximanova-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima_nova';
+  src: url('/assets/fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/proximanova-bold-webfont.woff') format('woff'),
+  url('/assets/fonts/proximanova-bold-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, input, button, select, textarea, body {
+  font-family: "proxima_nova", lucida grande, Arial, sans-serif;
+}
+
+input, button, select, textarea, body {
+  line-height: 1.41;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  line-height: 1.2;
+}
+
+.h1, h1 {
+  font-size: 38px;
+}
+
+.h2, h2 {
+  font-size: 30px;
+}
+
+.h3, h3 {
+  font-size: 22px;
+}
+
+.h4, h4 {
+  font-size: 18px;
+}
+
+.h5, h5 {
+  font-size: 16px;
+}
+
+.h6, h6 {
+  font-size: 14px;
+}
+
+.lead {
+  font-size: 18px;
+}
+
+.font-bold,
+strong {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: @link-color;
+  border-color: @link-color;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 12px 35px;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @link-color-hover;
+    border-color: @link-color-hover;
+  }
+}
+
+.form-control {
+  font-size: 16px;
+  min-height: 45px;
+
+  &:focus {
+    border-color: @link-color;
+    box-shadow: none;
+  }
+}
+
+a {
+  color: @link-color;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @link-color-hover;
+  }
+}
+
+// Main Header
+.main-header {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  * {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  img {
+    max-width: 130px;
+    width: 100%;
+  }
+}
+
+.main-nav {
+  list-style: none;
+  margin: 0;
+
+  li > a {
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+
+    &:not(.btn) {
+      color: #1b2837;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: @link-color;
+      }
+    }
+  }
+
+  .btn {
+    font-weight: bold;
+    margin-left: 40px;
+    min-width: 120px;
+    padding: 5px 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Body
+.masthead-curve {
+  background: linear-gradient(0deg, rgb(0, 173, 238) 0%, rgb(2, 132, 200) 100%);
+  min-height: 570px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+
+  h1 + .lead,
+  h1 + .lead * {
+    color: #fff;
+  }
+
+  svg {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &::after {
+    content: url('/assets/svg/pw-masthead-pattern.png');
+    position: absolute;
+    bottom: 0;
+  }
+
+  + section {
+    background-color: #f2f2f2;
+  }
+}
+
+.body-form-login {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .container {
+    padding-bottom: 60px;
+  }
+
+  .card {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+    margin-top: -400px;
+    padding: 10% 20%;
+  }
+
+  .form-footer {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .forgot-pw {
+    margin-left: 30px;
+    padding-left: 30px;
+    position: relative;
+
+    &::before {
+      content: '';
+      border-left: 1px solid #ccc;
+      height: 45px;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+// Footer
+.white-curve-bottom-svg {
+  background-color: #f2f2f2;
+}
+
+footer {
+  p, li, a {
+    font-size: 14px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  .h2, h2 {
+    color: #1b2837;
+    font-size: 16px;
+  }
+
+  .fa-ul {
+    margin-left: 1.8em;
+  }
+
+  .fa-li {
+    left: -2em;
+    text-align: left;
+  }
+}
+
+.main-footer {
+  padding-top: 85px;
+
+  a {
+    color: #808080;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @link-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.second-footer {
+  margin-top: 60px;
+  a {
+    color: @link-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @link-color;
+    }
+  }
+}
+
+.bottom-footer {
+  margin-top: 40px;
+
+  .container {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      right: 15px;
+      height: 1px;
+      border-top: 1px solid #eee;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "pronto-world",
+  "version": "1.0.0",
+  "description": "new pronto-world site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prontobacon/pronto-world.git"
+  },
+  "keywords": [
+    "pronto-world"
+  ],
+  "author": "Jayakorn Karikan (Bacon)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prontobacon/pronto-world/issues"
+  },
+  "homepage": "https://github.com/prontobacon/pronto-world#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "less-plugin-autoprefix": "^2.0.0",
+    "less-plugin-clean-css": "^1.5.1"
+  }
+}

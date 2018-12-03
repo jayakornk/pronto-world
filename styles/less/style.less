@@ -63,14 +63,27 @@ input, button, select, textarea, body {
   font-size: 18px;
 }
 
+.font-custom1 {
+  font-size: 45px;
+}
+
+.font-custom2 {
+  font-size: 12px;
+}
+
 .font-bold,
 strong {
   font-weight: bold;
 }
 
+.btn {
+  border-radius: 3px;
+}
+
 .btn-primary {
   background-color: @link-color;
   border-color: @link-color;
+  // border-radius: 3px;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -204,11 +217,46 @@ section[class^="body-"] {
     padding-bottom: 60px;
   }
 
-  .card-custom {
+  h1, h2, h3, h4, h5, h6 {
+    color: #1b2837;
+  }
+}
+
+.body-1280 {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.card-custom {
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+  margin-top: -400px;
+  padding: 10% 20%;
+}
+
+.card-custom2 {
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+  margin-top: -400px;
+
+  .card-header {
+    background-color: #f2f2f2;
+    border: 0;
+    padding: 7% 20% 10%;
+  }
+
+  .card-body {
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .25);
-    margin-top: -400px;
-    padding: 10% 20%;
+    border: 0;
+    padding: 55px 0 75px;
+  }
+
+  .card-body-inner {
+    width: 1170px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -221,9 +269,25 @@ section[class^="body-"] {
   }
 
   h2 {
-    color: #1b2837;
     margin-bottom: 0;
   }
+}
+
+.next-btn,
+.back-btn {
+  background-color: transparent;
+  border: 1px solid #dcdcdc;
+  color: #00adee;
+}
+
+.next-btn[disabled],
+.next-btn[disabled] i {
+  color: #fff;
+}
+
+.next-btn[disabled] {
+  background-color: #dcdcdc;
+  border-color: #ccc;
 }
 
 // My Account
@@ -248,8 +312,171 @@ section[class^="body-"] {
   }
 }
 
-// Sign Up
+// Site Plan
+.stages-icons {
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    border-bottom: 1px solid #dcdcdc;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+  }
 
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.stages-icon {
+  background-color: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 50%;
+  padding: 15px;
+  position: relative;
+  z-index: 2;
+
+  &.current {
+    border: 2px solid #00adee;
+  }
+
+  &:not(.current) > svg * {
+    fill: #dcdcdc;
+  }
+
+  > svg {
+    width: 60px;
+  }
+
+  &::before,
+  &::after {
+    color: #1b2837;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  &::before {
+    font-size: 22px;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    bottom: -45px;
+  }
+
+  &::after {
+    bottom: -70px;
+    text-transform: uppercase;
+  }
+
+  &:first-child {
+    &::before {
+      content: 'Step 1';
+    }
+
+    &::after {
+      content: 'Website';
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      content: 'Step 2';
+    }
+
+    &::after {
+      content: 'Marketing';
+    }
+  }
+
+  &:nth-child(3) {
+    &::before {
+      content: 'Step 3';
+    }
+
+    &::after {
+      content: 'Checkout';
+    }
+  }
+}
+
+.plans {
+  margin-top: 70px;
+  margin-bottom: 60px;
+}
+
+.plan {
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  flex: 0 1 360px;
+  padding: 40px 40px 10px;
+
+  > svg {
+    width: 100%;
+    max-width: 60px;
+  }
+
+  > hr {
+    margin: 25px auto;
+    max-width: 250px;
+  }
+
+  .price {
+    line-height: 1;
+    margin-bottom: 1.5rem;
+
+    .font-custom1 {
+      color: @link-color;
+    }
+  }
+
+  .fa-ul {
+    font-size: 15px;
+
+    > li {
+      position: relative;
+    }
+  }
+
+  .fa-li {
+    color: @link-color;
+  }
+
+  .choose-plan-btn {
+    margin-bottom: 1.5rem;
+  }
+}
+
+a[data-toggle="collapse"] {
+  color: #666;
+  cursor: pointer;
+  text-decoration: none;
+
+  svg {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
+
+  &::after {
+    content: 'Less Details';
+  }
+
+  &.collapsed {
+    svg {
+      transform: rotate(360deg);
+    }
+
+    &::after {
+      content: 'More Details';
+    }
+  }
+}
 
 
 // Footer

@@ -318,7 +318,7 @@ section[class^="body-"] {
   &::before,
   &::after {
     content: '';
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 2px solid #dcdcdc;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -475,6 +475,19 @@ a[data-toggle="collapse"] {
     &::after {
       content: 'More Details';
     }
+  }
+}
+
+// Marketing Plan
+.body-marketing-plan {
+  .stages-icons::before {
+    border-color: @link-color;
+  }
+}
+
+.card-body-inner-title {
+  .form-check-input {
+    margin-top: 0.1rem;
   }
 }
 

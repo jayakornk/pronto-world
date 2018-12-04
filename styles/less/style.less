@@ -145,6 +145,20 @@ a {
   list-style: none;
   margin: 0;
 
+  .btn {
+    font-weight: bold;
+    margin-left: 40px;
+    min-width: 120px;
+    padding: 5px 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.main-nav,
+.logged-in {
   li > a {
     &:hover,
     &:focus,
@@ -162,16 +176,46 @@ a {
       }
     }
   }
+}
 
-  .btn {
-    font-weight: bold;
-    margin-left: 40px;
-    min-width: 120px;
-    padding: 5px 0;
+// Header Logged In
+.logged-in {
+  li > a {
+    margin: 10px 25px;
+    // padding: 10px 0;
+  }
+}
 
-    &:focus {
-      box-shadow: none;
-    }
+.profile-info {
+  > span {
+    display: block;
+  }
+
+  .profile-company {
+    font-size: 12px;
+  }
+}
+
+.profile-img-link {
+  margin: 0 10px;
+  > svg {
+    font-size: 36px;
+  }
+}
+
+.profile-noti-btn {
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  position: relative;
+
+  > svg {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -518,31 +562,6 @@ a[data-toggle="collapse"] {
   }
 }
 
-.card-body-details table,
-table.onboarding-table {
-  border-top: 1px solid #dbdbdb;
-}
-
-.card-body-details,
-.onboarding-table {
-  thead > tr {
-    background-color: #f3f3f3;
-  }
-
-  tbody > tr:nth-child(2n+1) {
-    background-color: #fff;
-  }
-
-  tbody > tr:nth-child(2n) {
-    background-color: #fafafa;
-  }
-
-  th + th,
-  td + td {
-    text-align: center;
-  }
-}
-
 .card-body-details {
   margin-bottom: 45px;
 
@@ -550,32 +569,6 @@ table.onboarding-table {
     border-color: #dbdbdb;
     margin-top: 55px;
     margin-bottom: 40px;
-  }
-
-  table {
-    thead > tr > th,
-    tbody > tr > td {
-      border: 0;
-      vertical-align: middle;
-    }
-
-    thead > tr {
-      height: 58px;
-    }
-
-    tbody > tr {
-      height: 50px;
-    }
-
-    th:first-child,
-    td:first-child {
-      padding-left: 35px;
-    }
-
-    th:last-child,
-    td:last-child {
-      padding-right: 35px;
-    }
   }
 }
 
@@ -679,6 +672,92 @@ table.onboarding-table {
   }
 }
 
+// Onboarding
+.body-onboarding {
+  .card-body {
+    border-radius: 3px;
+    padding: 105px 0;
+  }
+
+  .card-body-inner {
+    width: 100%;
+    max-width: calc(1170px * .83333);
+    margin: 0 auto;
+  }
+
+  hr {
+    margin: 40px 0;
+  }
+}
+
+// Tables
+.one-time,
+.recurring,
+.onboarding {
+  table {
+    border-top: 1px solid #dbdbdb;
+    margin-bottom: 0;
+
+    thead > tr > th,
+    tbody > tr > td {
+      border: 0;
+      vertical-align: middle;
+    }
+  
+    thead > tr {
+      height: 58px;
+      background-color: #f3f3f3;
+    }
+  
+    tbody {
+      > tr {
+        height: 50px;
+      }
+
+      > tr:nth-child(2n+1) {
+        background-color: #fff;
+      }
+
+      > tr:nth-child(2n) {
+        background-color: #fafafa;
+      }
+    }
+
+    th + th,
+    td + td {
+      text-align: center;
+    }
+  
+    th:first-child,
+    td:first-child {
+      padding-left: 35px;
+    }
+  
+    th:last-child,
+    td:last-child {
+      padding-right: 35px;
+    }
+  }
+}
+
+.onboarding table {
+  thead > tr {
+    height: 90px;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 35px;
+    max-width: 100%;
+    width: calc(1170px * .5);
+  }
+
+  th + th,
+  td + td {
+    max-width: 100%;
+    width: calc(1170px * .17);
+  }
+}
 
 // Footer
 .white-curve-bottom-svg {

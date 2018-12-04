@@ -242,9 +242,12 @@ a {
   }
 
   &::after {
-    content: url('/assets/svg/pw-masthead-pattern.png');
+    content: '';
     position: absolute;
     bottom: 0;
+    background-image: url('/assets/svg/pw-masthead-pattern.png');
+    height: 380px;
+    width: 100%;
   }
 
   + section {
@@ -304,6 +307,10 @@ section[class^="body-"] {
   }
 }
 
+.card-body-title {
+  margin-bottom: 65px;
+}
+
 .form-title {
   > svg {
     margin-right: 10px;
@@ -329,13 +336,28 @@ section[class^="body-"] {
 }
 
 .next-btn[disabled],
-.next-btn[disabled] i {
+.next-btn[disabled] svg,
+.complete-transaction-btn[disabled],
+.complete-transaction-btn[disabled] svg {
   color: #fff;
 }
 
-.next-btn[disabled] {
+.next-btn[disabled],
+.complete-transaction-btn[disabled] {
   background-color: #dcdcdc;
   border-color: #ccc;
+}
+
+.fill-out-btn {
+  background-color: transparent;
+  border: 1px solid @link-color;
+  color: @link-color;
+}
+
+.call-btn {
+  background-color: transparent;
+  border-color: #dbdbdb;
+  color: @link-color;
 }
 
 // My Account
@@ -344,19 +366,19 @@ section[class^="body-"] {
     margin-top: 30px;
     margin-bottom: 20px;
   }
+}
 
-  .forgot-pw {
-    margin-left: 30px;
-    padding-left: 30px;
-    position: relative;
+.forgot-pw {
+  margin-left: 30px;
+  padding-left: 30px;
+  position: relative;
 
-    &::before {
-      content: '';
-      border-left: 1px solid #ccc;
-      height: 45px;
-      position: absolute;
-      left: 0;
-    }
+  &::before {
+    content: '';
+    border-left: 1px solid #ccc;
+    height: 45px;
+    position: absolute;
+    left: 0;
   }
 }
 
@@ -464,6 +486,15 @@ section[class^="body-"] {
   border-radius: 3px;
   flex: 0 1 360px;
   padding: 40px 40px 10px;
+
+  .collapse + a,
+  .collapsing + a {
+    margin-bottom: 25px;
+  }
+
+  &.active {
+    border-color: @link-color;
+  }
 
   > svg {
     width: 100%;
@@ -607,11 +638,20 @@ a[data-toggle="collapse"] {
 }
 
 .gift-code-status {
-  position: absolute;
-  left: 20px;
-  right: 100%;
-  bottom: -25px;
-  font-size: 14px;
+  // position: absolute;
+  // left: 20px;
+  // right: 100%;
+  // right: -120px;
+  // bottom: -25px;
+  // font-size: 14px;
+
+  > .fa-exclamation-circle {
+    color: #f00;
+  }
+
+  > .fa-check-circle {
+    color: #0f0;
+  }
 }
 
 .middle-line {
@@ -823,6 +863,10 @@ footer {
 .bottom-footer {
   margin-top: 40px;
 
+  * {
+    font-size: 12px;
+  }
+
   .container {
     position: relative;
     padding-top: 20px;
@@ -838,4 +882,168 @@ footer {
       border-top: 1px solid #eee;
     }
   }
+}
+
+// Media Queries
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  h3, .h3 {
+    font-size: 20px;
+  }
+
+  .card-custom2 {
+    .card-body {
+      padding: 55px 7.5px 35px;
+    }
+  }
+
+  .card-body-title,
+  .card-body-nav {
+    padding: 0 7.5px;
+  }
+
+  .plan {
+    margin: 0 7.5px;
+    padding: 30px 30px 10px;
+  }
+
+  .card-body-details-inner,
+  .card-body-payment-inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  h1, .h1 {
+    font-size: 28px;
+  }
+
+  h2, .h2 {
+    font-size: 20px;
+  }
+
+  h3, .h3 {
+    font-size: 18px;
+  }
+
+  .card-custom {
+    padding: 10%;
+  }
+
+  .card-custom2 {
+    .card-header {
+      padding: 5% 20% 14%;
+    }
+  }
+
+  .plans {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .plan {
+    padding: 30px 15px 10px;
+  }
+
+  .middle-line {
+    margin: 0 29.5px;
+  }
+
+  .choose-plan-btn {
+    padding: 12px 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .body-marketing-plan .plans {
+    display: flex;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .card-custom {
+    padding: 5% 10%;
+  }
+
+  .forgot-pw {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .stages-icons {
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  .stages-icon:not(.current) {
+    display: none;
+  }
+
+  .stages-icon.current {
+    margin: 0 auto;
+    padding: 10px;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .plan {
+    + .plan {
+      margin-top: 15px;
+    }
+
+    .collapse ,
+    .collapsing {
+      + a {
+        margin-bottom: 20px;
+      }
+
+      > ul {
+        display: table;
+        margin: 0 auto 20px;
+      }
+    }
+  }
+
+  .plan + .plan {
+    margin-top: 15px;
+  }
+
+  .card-body-details-inner,
+  .card-body-payment-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  footer .fa-ul {
+    display: table;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  [class*="main-footer-"] {
+    margin-bottom: 40px;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+}
+
+.dis-none {
+  display: none !important;
 }

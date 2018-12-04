@@ -15,7 +15,7 @@
       <div class="main-header">
         <div class="container">
           <div class="row d-flex align-items-center">
-            <div class="col-2 my-3">
+            <div class="col-lg-2 my-3">
               <img src="/assets/pronto-logo.svg" alt="pronto-logo">
             </div>
             <div class="col-10 d-none">
@@ -207,8 +207,9 @@
                       <div class="gift-code d-flex align-items-center float-md-right">
                         <span>Enter your gift code if you have one</span>
                         <div class="gift-code-input-holder">
-                          <input class="gift-code-input" type="text" placeholder="Your gift code"><br>
-                          <span class="gift-code-status float-right"></span>
+                          <input class="gift-code-input" type="text" aria-describedby="codeHelp" placeholder="Your gift code">
+                          <small id="codeHelp" class="form-text gift-code-status"></small>
+                          <!-- <span class="gift-code-status float-right"></span> -->
                         </div>
                         <!-- <a class="btn btn-primary btn-lg gift-code-submit">Apply -->
                           <button class="btn btn-primary gift-code-submit">Apply</button>
@@ -247,7 +248,7 @@
                             </div>
                             <div class="form-group">
                               <label for="cardHolder">Cardholder Name</label>
-                              <input type="text" class="form-control" id="cardHolder" placeholder="Adam Selley">
+                              <input type="text" class="form-control" id="cardHolder" placeholder="John Doe">
                             </div>
                             <div class="form-row">
                               <div class="form-group col-md-6">
@@ -315,12 +316,12 @@
                             Accept to Pronto’s terms of service
                           </label>
                         </div>
-                        <button class="btn btn-primary">Complete Transaction</button>
+                        <a class="btn btn-primary complete-transaction-btn disabled" href="/onboarding.html" disabled>Complete Transaction</a>
                       </div>
                     </div>
                   </div>
-                  <div class="bottom-box-nav clearfix">
-                    <a href="/choose-site-plan/" class="btn btn-lg btn-primary back-btn float-left"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+                  <div class="card-body-nav clearfix">
+                    <a href="/marketing-plan.html" class="btn btn-lg btn-primary back-btn float-left"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
                   </div>
                 </div>
               </div>
@@ -331,7 +332,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" class="text-center text-md-left">
       <div class="white-curve-bottom-svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 786.67 45.48" width="100%" height="100px" preserveAspectRatio="none">
           <defs>
@@ -353,7 +354,7 @@
       <div class="main-footer">
         <div class="container">
           <div class="row">
-            <div class="col-3 col-md-3 main-footer-resources">
+            <div class="col-12 col-md-3 main-footer-resources">
               <h2 class="font-bold text-uppercase">Resources</h2>
               <ul id="menu-footer-resources" class="list-unstyled">
                 <li class="menu-item">
@@ -373,7 +374,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3 col-md-3 main-footer-legal">
+            <div class="col-12 col-md-3 main-footer-legal">
               <h2 class="font-bold text-uppercase">Legal</h2>
               <ul id="menu-footer-legal" class="list-unstyled">
                 <li class="menu-item">
@@ -387,7 +388,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3 col-md-3 main-footer-technical">
+            <div class="col-12 col-md-3 main-footer-technical">
               <h2 class="font-bold text-uppercase">Technical</h2>
               <ul id="menu-footer-technical" class="list-unstyled">
                 <li class="menu-item">
@@ -407,7 +408,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3 col-md-3 main-footer-connect">
+            <div class="col-12 col-md-3 main-footer-connect">
               <h2 class="font-bold text-uppercase">Connect</h2>
               <ul id="menu-footer-connect" class="list-unstyled fa-ul social-list">
                 <li>
@@ -442,10 +443,10 @@
       <div class="bottom-footer">
         <div class="container">
           <div class="row">
-            <div class="col-6 col-md-5">
+            <div class="col-12 col-md-5">
               <p>&copy;2018 Pronto Marketing All Right Reserved.</p>
             </div>
-            <div class="col-6 col-md-7 text-right">
+            <div class="col-12 col-md-7 text-center text-md-right">
               <p>This website is built on the same great platform all of our clients enjoy.</p>
             </div>
           </div>
@@ -454,6 +455,7 @@
     </footer>
 
     <script src="/scripts/lib/jquery-3.3.1.js"></script>
+    <script src="/scripts/lib/jquery.payment.min.js"></script>
     <script src="/scripts/lib/bootstrap/bootstrap.bundle.js"></script>
     <script src="/scripts/lib/fontawesome/all.js"></script>
     <script src="/scripts/script.js"></script>

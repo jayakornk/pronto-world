@@ -15,7 +15,7 @@
       <div class="main-header">
         <div class="container">
           <div class="row d-flex align-items-center">
-            <div class="col-2 my-3">
+            <div class="col-lg-2 my-3">
               <img src="/assets/pronto-logo.svg" alt="pronto-logo">
             </div>
             <div class="col-10 d-none">
@@ -143,7 +143,7 @@
                       </label>
                     </div>
                   </div>
-                  <div class="plans d-md-flex justify-content-between">
+                  <div class="plans justify-content-between">
                     <div class="plan">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
                         <defs>
@@ -298,11 +298,11 @@
                       </a>
                     </div>
                   </div>
-                  <div class="bottom-box-nav clearfix">
-                    <a href="/choose-site-plan/" class="btn btn-lg btn-primary back-btn float-left"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
-                    <a href="/checkout/" class="btn btn-lg btn-primary next-btn float-right disabled" disabled>Next <i class="fas fa-long-arrow-alt-right"></i></a>
-                    <a class="break d-none d-sm-block d-md-none clearfix"></a>
-                    <a href="#" class="btn btn-lg btn-primary skip-btn mr-2 float-right">Skip to Dashboard</a>
+                  <div class="card-body-nav clearfix">
+                    <a href="/site-plan.html" class="btn btn-lg btn-primary back-btn float-left"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+                    <a href="/checkout.html" class="btn btn-lg btn-primary next-btn float-right disabled" disabled>Next <i class="fas fa-long-arrow-alt-right"></i></a>
+                    <div class="break d-sm-block d-md-none clearfix"></div>
+                    <a href="#" class="btn btn-lg btn-primary skip-btn mt-2 mt-md-0 mr-md-2 float-right">Skip to Dashboard</a>
                   </div>
                 </div>
               </div>
@@ -313,7 +313,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" class="text-center text-md-left">
       <div class="white-curve-bottom-svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 786.67 45.48" width="100%" height="100px" preserveAspectRatio="none">
           <defs>
@@ -335,7 +335,7 @@
       <div class="main-footer">
         <div class="container">
           <div class="row">
-            <div class="col-3 col-md-3 main-footer-resources">
+            <div class="col-12 col-md-3 main-footer-resources">
               <h2 class="font-bold text-uppercase">Resources</h2>
               <ul id="menu-footer-resources" class="list-unstyled">
                 <li class="menu-item">
@@ -355,7 +355,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3 col-md-3 main-footer-legal">
+            <div class="col-12 col-md-3 main-footer-legal">
               <h2 class="font-bold text-uppercase">Legal</h2>
               <ul id="menu-footer-legal" class="list-unstyled">
                 <li class="menu-item">
@@ -369,7 +369,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3 col-md-3 main-footer-technical">
+            <div class="col-12 col-md-3 main-footer-technical">
               <h2 class="font-bold text-uppercase">Technical</h2>
               <ul id="menu-footer-technical" class="list-unstyled">
                 <li class="menu-item">
@@ -389,7 +389,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3 col-md-3 main-footer-connect">
+            <div class="col-12 col-md-3 main-footer-connect">
               <h2 class="font-bold text-uppercase">Connect</h2>
               <ul id="menu-footer-connect" class="list-unstyled fa-ul social-list">
                 <li>
@@ -424,10 +424,10 @@
       <div class="bottom-footer">
         <div class="container">
           <div class="row">
-            <div class="col-6 col-md-5">
+            <div class="col-12 col-md-5">
               <p>&copy;2018 Pronto Marketing All Right Reserved.</p>
             </div>
-            <div class="col-6 col-md-7 text-right">
+            <div class="col-12 col-md-7 text-center text-md-right">
               <p>This website is built on the same great platform all of our clients enjoy.</p>
             </div>
           </div>
@@ -436,6 +436,7 @@
     </footer>
 
     <script src="/scripts/lib/jquery-3.3.1.js"></script>
+    <script src="/scripts/lib/jquery.payment.min.js"></script>
     <script src="/scripts/lib/bootstrap/bootstrap.bundle.js"></script>
     <script src="/scripts/lib/fontawesome/all.js"></script>
     <script src="/scripts/script.js"></script>

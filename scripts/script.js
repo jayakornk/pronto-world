@@ -1,12 +1,19 @@
 $(document).ready(function() {
+  if (window.location.pathname === '/sign-up.html') {
+    $('form').on('submit', function(e) {
+      console.log($(this).serialize());
+      e.preventDefault();
+    });
+  }
+
   $('.choose-plan-btn').on('click', function(e) {
     e.preventDefault();
     var plan = $(this).parents('.plan');
     plan.siblings().removeClass('active');
     plan.addClass('active');
 
-    $('.next-btn').removeAttr('disabled');
-    $('.boxes p:last-child').css('cursor', 'auto');
+    $('.next-btn').removeAttr('disabled').removeClass('disabled');
+    // $('.boxes p:last-child').css('cursor', 'auto');
   });
 
   $('.gift-code-submit').on('click', function() {
@@ -28,7 +35,7 @@ $(document).ready(function() {
   $('#cardExpire').formatCardExpiry();
   $('#cardCvv').formatCardCVC();
 
-  $('.hide-below').on('change', function() {
+  $('#notnow').on('change', function() {
     $('.plans').animate(
       {
         height: 'toggle',
@@ -39,10 +46,21 @@ $(document).ready(function() {
       function() {
         if ($(this).css('display') === 'none') {
           $('.next-btn').removeAttr('disabled');
+          $('.next-btn').removeClass('disabled');
         } else {
           $('.next-btn').attr('disabled', '');
+          $('.next-btn').addClass('disabled');
         }
       }
     );
+  });
+
+  $('#confirmPayment').on('change', function() {
+    var btn = $('.complete-transaction-btn');
+    if (btn.attr('disabled')) {
+      btn.removeAttr('disabled').removeClass('disabled');
+    } else {
+      btn.attr('disabled', '').addClass('disabled')
+    }
   });
 });

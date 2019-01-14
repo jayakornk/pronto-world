@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const connect = require('gulp-connect');
 const less = require('gulp-less');
 const sourcemaps = require('gulp-sourcemaps');
 const LessAutoprefix = require('less-plugin-autoprefix');
@@ -17,11 +18,19 @@ gulp.task('less', function() {
     .pipe(less({
       plugins: [autoprefix],
     }))
-    .pipe(cleanCSS())
+//    .pipe(cleanCSS())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(dstDir));
 });
 
 gulp.task('default', ['less'], function() {
   gulp.watch(`${srcDir}/*.less`, ['less']);
+});
+
+gulp.task('connect', function() {
+  gulp.watch(`${srcDir}/*.less`, ['less']);
+  connect.server({
+    root: '.',
+    livereload: true
+  })
 });

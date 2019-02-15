@@ -1047,3 +1047,448 @@ footer {
 .dis-none {
   display: none !important;
 }
+
+
+
+// CSS fo Services Index
+
+/* helper class */
+.flex-box {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.margin-0 {
+  margin: 0;
+}
+.aligncenter {
+  margin: 0 auto;
+}
+.h2, h2 {
+  color: #162447 !important;
+}
+.bold {
+  font-weight: bold; 
+}
+.margin-bottom-40 {
+  margin-bottom: 40px;
+}
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+/* Header */
+.main-header .navbar-left {
+  flex-direction: row;
+  justify-content: space-around;
+  li a {
+    color: #1B2837;
+    &:hover, &:focus, &:active {
+      color: #00adee;
+      text-decoration: none;
+    }
+  }
+}
+.header-items {
+  text-align: right;
+  margin-right: 15px;
+  span {
+    text-transform: none !important;
+    color: #1B2837;
+  }
+  .header-company-name {
+    font-size: 14px;
+    .font-user-name {
+      font-size: 12px;
+    }
+  }
+}
+
+.quick-section {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  .quicklinks {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.profile-pic img {
+  border-radius: 50% !important;
+  max-width: 35px !important;
+  height: auto !important;
+}
+
+.notification-icon span {
+  color: transparent;
+  margin-top: 4px;
+  font-size: 1.5em;
+  .fa-circle {
+    width: 37px;
+    border: 1px solid #DCDCDC;
+    border-radius: 50%;
+    height: 37px;
+  }
+  .fa-inverse {
+    color: #00ADEE;
+    font-size: 0.8em;
+  }
+}
+
+/* Body */
+
+section .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.service-title {
+  font-size: 22px;
+  color: #162447;
+  font-weight: bold;
+}
+.well-website {
+  border: 1px solid #DCDCDC;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #666;
+  min-height: 365px;
+  margin-bottom: 30px;
+  &:hover, &:focus, &:active, &.active {
+    border-color: #00ADEE;
+  }
+  img {
+    margin-bottom: 20px;
+  }
+}
+.well-website.active .btn-subscribed {
+  opacity: 1;
+}
+.btn-subscribed {
+  opacity: 0;
+  transition: 0.3s;
+  position: absolute;
+  right: 0;
+  top: 10%;
+  background-color: #00ADEE;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px 0 0 4px;
+  font-size: 12px;
+  svg {
+  font-size: 10px;
+  }
+}
+
+p.website-fee {
+  color: #00ADEE;
+  font-size: 22px;
+  font-weight: bold;
+  span {
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+
+.well-website .btn,
+.btn-custom {
+  color: #00ADEE !important;
+  background-color: #fff;
+  border-color: #DCDCDC;
+  &:hover, &:focus, &:active {
+    background-color: #00adee;
+    color: #fff !important;
+    border-color: #00adee;
+  }
+}
+.well-website .btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.well-light-transparent {
+  background-color: #F2F2F2;
+  padding: 15px;
+}
+.icon-side {
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.well-mkt-strategy {
+  padding: 50px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  .txt-side {
+    padding: 5%;
+  }
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(to right, #0e1e34 0%,#162448 100%); 
+  h2 {
+    margin-bottom: 30px;
+  }
+  .btn {
+    color: #fff !important;
+  }
+  &.margin-vertical-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+.accent-blue {
+  color: #00ADEE !important;
+}
+
+.standalone-service {
+  form#searchform {
+      position: absolute;
+      right: 0;
+      display: flex;
+      min-height: 40px;
+      top: 30px;
+  }
+  input#search {
+      border-radius: 20px;
+      box-shadow: 0 0 0 !important;
+      width: 210px !important;
+      padding-left: 20px;
+      border: 1px solid #dedede;
+  }
+  form button {
+      position: absolute;
+      right: 0;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+  }
+  form button svg path {
+      fill: #666;
+  }
+  .tab-pane > .flex-box {
+    flex-wrap: wrap;
+  }
+}
+
+
+.well-standalone-service {
+  border: 1px solid #ededed;
+  margin: 15px;
+  width: 22%;
+  text-align: center;
+  padding: 20px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: center;
+  transition: .3s;
+  overflow: hidden;
+  border-radius: 4px;
+  img {
+    transition: .3s;
+  }
+  &:hover, &:focus, &:active {
+    background: linear-gradient(to bottom, #0e1e34 0%,#162448 100%); 
+    transform: translateY(-20px);
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
+    border-color: transparent;
+    h3 {
+      color: #00ADEE;
+    }
+    p {
+      opacity: 1;
+      position: relative;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+
+.well-standalone-service.subscribed {
+  border-color: #00adee;
+  position: relative;
+}
+.well-standalone-service.subscribed .btn-subscribed {
+  opacity: 1;
+}
+
+
+.well-standalone-service h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #162447;
+  margin: 20px 0;
+}
+
+p.service-desc {
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+  font-size: 12px;
+  color: #fff;
+  a {
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+.standalone-service ul li.active a {
+  font-weight: bold;
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  color: #00ADEE;
+}
+.standalone-service ul {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  li + li {
+    margin-left: 10px;
+  }
+}
+.standalone-service ul li a {
+  color: #666666;
+  padding: 10px 25px;
+  text-decoration: none;
+  &.active, &:hover, &:focus, &:active { 
+      background-color: #F2F2F2;
+      border-radius: 20px;
+      color: #00ADEE;
+  }
+}
+
+.main-footer {
+  border-top: 1px solid #ededed;
+  h6 {
+  color: #162447;
+  font-size: 15px;
+  margin-bottom: 20px;
+  }
+  hr {
+  margin: 30px 0;
+  }
+}
+.policy-footer {
+  padding-bottom: 30px;
+}
+
+
+
+/* Media */
+
+@media (max-width: 991px) {
+  .quick-section {
+    display: block !important;
+    width: 250px;
+  }
+  .quick-section .quicklinks {
+    float: left;
+    width: 71%;
+  }
+  .notification-icon span {
+    margin-top: 0;
+  }
+  .standalone-service ul li a {
+    padding: 5px 10px;
+  }
+  .well-standalone-service {
+    margin: 15px 10px;
+    width: 30%;
+    padding: 20px 10px;
+  }
+  .well-standalone-service h3 {
+    font-size: 18px;
+  }
+  .well-mkt-strategy {
+    display: block;
+    text-align: center;
+  }
+  .icon-side + p {
+    font-size: 14px;
+  }
+  .service-title {
+    font-size: 18px;
+  }
+  .well-website {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 420px;
+  }
+.btn-subscribed {
+  font-size: 10px;
+}
+section .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+  .standalone-service {
+    form#searchform {
+    position: relative;
+    top: 10px;
+    }
+    input#search {
+      width: 100% !important;
+    }
+  }
+}
+
+
+@media (max-width:767px) {
+.well-mkt-strategy img {
+  max-width: 100%;
+}
+.well-mkt-strategy {
+  padding: 15px 10px;
+}
+.well-mkt-strategy .btn {
+  min-width: auto;
+  width: auto;
+  white-space: pre-wrap;
+}
+.standalone-service ul li {
+  margin: 10px;
+}
+.well-standalone-service {
+  width: 100%;
+}
+.main-header {
+  text-align: center;
+}
+.quick-section {
+  width: 100%;
+}
+.xs-hidden {
+  display: none;
+}
+.well-website {
+
+  min-height: 100%;
+}
+.well-website .btn {
+  position: relative;
+  bottom: unset;
+  left: unset;
+  transform: translateX(0);
+}
+.xs-margin-bottom-20 {
+    margin-bottom: 20px;
+  }
+}

@@ -1284,13 +1284,84 @@ p.website-fee {
   .tab-pane > .flex-box {
     flex-wrap: wrap;
   }
+  .controls {
+    .control {
+      display: inline-block;
+      text-align: center;
+      border-radius: 100px;
+      padding: 10px 15px;
+      border: 0;
+      cursor: pointer;
+      background: transparent;
+      color: #666;
+      transition: all .3s;
+      min-width: 100px;
+      &:hover,&:active,&:focus {
+        background: #f2f2f2;
+        color: #00adee;
+      }
+    }
+    .control-right {
+      float: right;
+      color:#00adee;
+    }
+    .control.mixitup-control-active {
+        font-weight: 700;
+        background-color: #f2f2f2;
+        color: #00adee;
+    }
+  }
 }
 
+.container-mixitup {
+  margin-top:30px;
+}
+
+.mix-item-standalone {
+  width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mixitup-page-list  {
+  .mixitup-control {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    padding: 5px;
+    height: 30px;
+    background: #f2f2f2;
+    border-radius: 4px;
+    color:#666;
+    &:hover {
+      background: #dadada;
+    }
+  }
+  .mixitup-control-active {
+    background: #00adee;
+    color: #fff;
+    &:hover {
+      background: #00adee;
+    }
+  }
+  .mixitup-control.mixitup-control-disabled {
+    color: #ccc;
+    &:hover {
+      background: #f2f2f2;
+    }
+  }
+}
+
+.mixitup-page-stats {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
 
 .well-standalone-service {
   border: 1px solid #ededed;
-  margin: 15px;
-  width: 22%;
   text-align: center;
   padding: 20px 15px;
   display: -webkit-box;
@@ -1302,23 +1373,14 @@ p.website-fee {
   transition: .3s;
   overflow: hidden;
   border-radius: 4px;
+  margin-bottom: 30px;
   img {
     transition: .3s;
   }
   &:hover, &:focus, &:active {
-    background: linear-gradient(to bottom, #0e1e34 0%,#162448 100%); 
-    transform: translateY(-20px);
-    box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
-    border-color: transparent;
+    border-color: #00ADEE;
     h3 {
       color: #00ADEE;
-    }
-    p {
-      opacity: 1;
-      position: relative;
-    }
-    img {
-      display: none;
     }
   }
 }
@@ -1340,10 +1402,8 @@ p.website-fee {
 }
 
 p.service-desc {
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s;
   font-size: 12px;
+  margin-bottom:0;
   color: #fff;
   a {
     margin-top: 10px;

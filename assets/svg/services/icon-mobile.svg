@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="icon-mobile" transform="translate(-291.619 -1321.447)">
+    <g id="icons-inner" transform="translate(57.053 1292.608)">
+      <path id="Path_2100" data-name="Path 2100" d="M245.767,29.392h15.6a2.725,2.725,0,0,1,2.021.913,3.1,3.1,0,0,1,.8,2.092V63.282a3.1,3.1,0,0,1-.8,2.092,2.727,2.727,0,0,1-2.021.913h-15.6a2.729,2.729,0,0,1-2.021-.913,3.1,3.1,0,0,1-.8-2.092V32.4a3.1,3.1,0,0,1,.8-2.092,2.727,2.727,0,0,1,2.021-.913Zm7.1,34.155h1.416a.9.9,0,1,0,0-1.8h-1.416a.9.9,0,1,0,0,1.8ZM244.749,33.1h17.634V32.4a1.305,1.305,0,0,0-.327-.881.942.942,0,0,0-.692-.322h-15.6a.936.936,0,0,0-.69.322,1.3,1.3,0,0,0-.328.881V33.1Zm17.634,1.8H244.749V58.872h17.634V34.906Zm0,25.767H244.749v2.609a1.3,1.3,0,0,0,.328.881.936.936,0,0,0,.69.322h15.6a.942.942,0,0,0,.692-.322,1.3,1.3,0,0,0,.327-.881Z" transform="translate(0 0)" fill="#1c3c50" fill-rule="evenodd"/>
+      <path id="Path_2101" data-name="Path 2101" d="M293.475,69.628h2.648a.9.9,0,1,0,0-1.8h-2.648a.9.9,0,0,0,0,1.8Z" transform="translate(-37.637 -29.148)" fill="#00aef0" fill-rule="evenodd"/>
+      <path id="Path_2102" data-name="Path 2102" d="M293.475,126.866h2.648a.9.9,0,1,0,0-1.8h-2.648a.9.9,0,0,0,0,1.8Z" transform="translate(-37.637 -72.557)" fill="#00aef0" fill-rule="evenodd"/>
+      <path id="Path_2103" data-name="Path 2103" d="M293.475,98.246h2.648a.9.9,0,1,0,0-1.8h-2.648a.9.9,0,0,0,0,1.8Z" transform="translate(-37.637 -50.852)" fill="#00aef0" fill-rule="evenodd"/>
+      <path id="Path_2104" data-name="Path 2104" d="M263.709,69.628h2.649a.9.9,0,0,0,0-1.8h-2.649a.9.9,0,0,0,0,1.8Z" transform="translate(-15.063 -29.148)" fill="#1c3c50" fill-rule="evenodd"/>
+      <path id="Path_2105" data-name="Path 2105" d="M263.709,126.866h2.649a.9.9,0,0,0,0-1.8h-2.649a.9.9,0,0,0,0,1.8Z" transform="translate(-15.063 -72.557)" fill="#00aef0" fill-rule="evenodd"/>
+      <path id="Path_2106" data-name="Path 2106" d="M263.709,98.246h2.649a.9.9,0,0,0,0-1.8h-2.649a.9.9,0,0,0,0,1.8Z" transform="translate(-15.063 -50.852)" fill="#00aef0" fill-rule="evenodd"/>
+    </g>
+    <rect id="icons-area" width="38" height="38" transform="translate(291.619 1321.447)" fill="none"/>
+  </g>
+</svg>

@@ -1,13 +1,13 @@
-/* global mixitupPagination */
+/* global mixitupMultifilter */
 
 if (typeof exports === 'object' && typeof module === 'object') {
-    module.exports = mixitupPagination;
+    module.exports = mixitupMultifilter;
 } else if (typeof define === 'function' && define.amd) {
     define(function() {
-        return mixitupPagination;
+        return mixitupMultifilter;
     });
 } else if (window.mixitup && typeof window.mixitup === 'function') {
-    mixitupPagination(window.mixitup);
+    mixitupMultifilter(window.mixitup);
 } else {
-    throw new Error('[MixItUp Pagination] MixItUp core not found');
+    throw new Error('[MixItUp MultiFilter] MixItUp core not found');
 }

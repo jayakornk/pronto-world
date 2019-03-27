@@ -21,7 +21,7 @@
     "safeContextKeyword": ["self"],
     "maximumLineLength": {
       "value": 140,
-      "allowComments": false,
+      "allowComments": true,
       "allowRegex": true
     },
     "requireSpaceBeforeBlockStatements": true,
@@ -36,11 +36,9 @@
     "disallowSpacesInFunctionDeclaration": {
         "beforeOpeningRoundBrace": true
     },
-    "disallowFunctionDeclarations": true,
+    "disallowFunctionDeclarations": false,
     "requireSpaceBetweenArguments": true,
-    "requireMultipleVarDecl": {
-        "allExcept": ["require"]
-    },
+    "requireMultipleVarDecl": false,
     "requireBlocksOnNewline": true,
     "requireSemicolons": true,
     "disallowEmptyBlocks": true,

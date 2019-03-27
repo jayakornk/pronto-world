@@ -3,486 +3,126 @@
 ## Overview
 
 The MixItUp configuration object is extended with properties relating to
-the Pagination extension.
+the MultiFilter extension.
 
 For the full list of configuration options, please refer to the MixItUp
 core documentation.
 
 ### Contents
 
-- [classNames](#classNames)
-- [load](#load)
-- [pagination](#pagination)
-- [render](#render)
-- [selectors](#selectors)
-- [templates](#templates)
+- [multifilter](#multifilter)
 
 
-<h2 id="classNames">classNames</h2>
+<h2 id="multifilter">multifilter</h2>
 
-A group of properties defining the output and structure of class names programmatically
-added to controls and containers to reflect the state of the mixer.
+A group of properties defining the behavior of your multifilter UI.
 
-### elementPager
+### enable
 
 
 
 
-The "element" portion of the class name added to pager controls.
+A boolean dictating whether or not to enable multifilter functionality.
 
-
-|Type | Default
-|---  | ---
-|`string`| `'control'`
-
-###### Example: changing the `config.classNames.elementPager` value
-
-```js
-
-// Change from the default value of 'control' to 'pager'
-
-var mixer = mixitup(containerEl, {
-    classNames: {
-        elementPager: 'pager'
-    }
-});
-
-// Base pager output: "mixitup-pager"
-```
-### elementPageList
-
-
-
-
-The "element" portion of the class name added to the page list element, when it is
-in its disabled state.
-
-The page list element is the containing element in which pagers are rendered.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'page-list'`
-
-###### Example: changing the `config.classNames.elementPageList` value
-
-```js
-
-// Change from the default value of 'page-list' to 'pagination-links'
-
-var mixer = mixitup(containerEl, {
-    classNames: {
-        elementPageList: 'pagination-links'
-    }
-});
-
-// Disabled page-list output: "mixitup-pagination-links-disabled"
-```
-### elementPageStats
-
-
-
-
-The "element" portion of the class name added to the page stats element, when it is
-in its disabled state.
-
-The page stats element is the containing element in which information about the
-current page and total number of pages is rendered.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'page-stats'`
-
-###### Example: changing the `config.classNames.elementPageStats` value
-
-```js
-
-// Change from the default value of 'page-stats' to 'pagination-info'
-
-var mixer = mixitup(containerEl, {
-    classNames: {
-        elementPageList: 'pagination-info'
-    }
-});
-
-// Disabled page-list output: "mixitup-pagination-info-disabled"
-```
-### modifierFirst
-
-
-
-
-The "modifier" portion of the class name added to the first pager in the list of pager controls.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'first'`
-
-### modifierLast
-
-
-
-
-The "modifier" portion of the class name added to the last pager in the list of pager controls.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'last'`
-
-### modifierLast
-
-
-
-
-The "modifier" portion of the class name added to the previous pager in the list of pager controls.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'prev'`
-
-### modifierNext
-
-
-
-
-The "modifier" portion of the class name added to the next pager in the list of pager controls.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'next'`
-
-### modifierTruncationMarker
-
-
-
-
-The "modifier" portion of the class name added to truncation markers in the list of pager controls.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'truncation-marker'`
-
-
-<h2 id="load">load</h2>
-
-A group of properties defining the initial state of the mixer on load (instantiation).
-
-### page
-
-
-
-
-An integer defining the starting page on load, if a page limit is active.
-
-
-|Type | Default
-|---  | ---
-|`number`| `1`
-
-###### Example: Defining a start page other than 1 to be applied on load
-
-```js
-
-// The mixer will show page 3 on load, with 8 items per page.
-
-var mixer = mixitup(containerEl, {
-    pagination: {
-        limit: 8
-    },
-    load: {
-        page: 3
-    }
-});
-```
-
-<h2 id="pagination">pagination</h2>
-
-A group of properties defining the mixer's pagination behavior.
-
-### generatePageList
-
-
-
-
-A boolean dictating whether or not MixItUp should render a list of pager controls.
-
-If you wish to control pagination functionality via the API, or your own UI, this can be set to `false`.
-
-In order for this functionality to work, you must provide MixItUp with a `pageList`
-element matching the selector defined in `selectors.pageList`. Pager controls will be
-rendered inside this element as per the templates defined for the `templates.pager`
-and related configuration options, or if set, a custom render
-function supplied to the `render.pager` configuration option.
-
-
-|Type | Default
-|---  | ---
-|`boolean`| `true`
-
-### generatePageStats
-
-
-
-
-A boolean dictating whether or not MixItUp should render a stats about the
-current page (e.g. "1 to 4 of 16").
-
-In order for this functionality to work, you must provide MixItUp with a `pageStats`
-element matching the selector defined in `selectors.pageStats`. Page stats content will
-be rendered inside this element as per the templates defined for the `templates.pageStats`
-and `templates.pageStatsSingle` configuration options, or if set, a custom render
-function supplied to the `render.pageStats` configuration option.
-
-
-|Type | Default
-|---  | ---
-|`boolean`| `true`
-
-### maintainActivePage
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`boolean`| `true`
-
-### loop
-
-
-
-
-
+If `true`, MixItUp will query the DOM for any elements with a
+`data-filter-group` attribute present on instantiation.
 
 
 |Type | Default
 |---  | ---
 |`boolean`| `false`
 
-### hidePageListIfSinglePage
+### logicWithinGroup
 
 
 
 
+A string dictating the logic to use when concatenating selectors within
+individual filter groups.
 
+If set to `'or'` (default), targets will be shown if they match any
+active filter in the group.
 
-
-|Type | Default
-|---  | ---
-|`boolean`| `false`
-
-### hidePageStatsIfSinglePage
-
-
-
-
-
+If set to `'and'`, targets will be shown only if they match
+all active filters in the group.
 
 
 |Type | Default
 |---  | ---
-|`boolean`| `false`
+|`string`| `'or'`
 
-### limit
-
-
+### logicBetweenGroups
 
 
 
 
+A string dictating the logic to use when concatenating each group's
+selectors into one single selector.
 
-|Type | Default
-|---  | ---
-|`number`| `-1`
+If set to `'and'` (default), targets will be shown only if they match
+the combined active selectors of all groups.
 
-### maxPagers
-
-
-
-
-A number dictating the maximum number of individual pager controls to render before
-truncating the list.
+If set to `'or'`, targets will be shown if they match the active selectors
+of any individual group.
 
 
 |Type | Default
 |---  | ---
-|`number`| `5`
+|`string`| `'and'`
 
-
-<h2 id="render">render</h2>
-
-A group of optional render functions for creating and updating elements.
-
-### pager
+### minSearchLength
 
 
 
 
-A function returning an HTML string representing a single pager control element.
-
-By default, MixItUp will render pager controls using its own internal renderer
-and templates (see `templates.pager`), but you may override this functionality by
-providing your own render function here instead. All pager elements must have a
-data-page element indicating the action of the control.
-
-The function receives an object containing all neccessary information
-about the pager as its first parameter.
+An integer dictating the minimum number of characters at which the value
+of a text input will be included as a multifilter. This prevents short or
+incomplete words with many potential matches from triggering
+filter operations.
 
 
 |Type | Default
 |---  | ---
-|`function`| `'null'`
+|`number`| `3`
 
-### pageStats
-
-
-
-
-A function returning an HTML string forming the contents of the "page stats" element.
-
-By default, MixItUp will render page stats using its own internal renderer
-and templates (see `templates.pageStats`), but you may override this functionality by
-providing your own render function here instead.
-
-The function receives an object containing all neccessary information
-about the current page and total pages as its first parameter.
-
-
-|Type | Default
-|---  | ---
-|`function`| `'null'`
-
-
-<h2 id="selectors">selectors</h2>
-
-A group of properties defining the selectors used to query elements within a mixitup container.
-
-### pageList
+### parseOn
 
 
 
 
-A selector string used to query the page list element.
+A string dictating when the parsing of filter groups should occur.
 
-Depending on the value of `controls.scope`, MixItUp will either query the
-entire document for the page list element, or just the container.
+If set to `'change'` (default), the mixer will be filtered whenever the
+filtering UI is interacted with. The mode provides real-time filtering with
+instant feedback.
+
+If set to `'submit'`, the mixer will only be filtered when a submit button is
+clicked (if using a `<form>` element as a parent). This enables the user to firstly
+make their selection, and then trigger filtering once they have
+finished making their selection.
+
+Alternatively, the `mixer.parseFilterGroups()` method can be called via the API at any
+time to trigger the parsing of filter groups and filter the mixer.
 
 
 |Type | Default
 |---  | ---
-|`string`| `'.mixitup-page-list'`
+|`string`| `'change'`
 
-### pageStats
-
-
-
-
-A selector string used to query the page stats element.
-
-Depending on the value of `controls.scope`, MixItUp will either query the
-entire document for the page stats element, or just the container.
-
-
-|Type | Default
-|---  | ---
-|`string`| `'.mixitup-page-stats'`
-
-
-<h2 id="templates">templates</h2>
-
-A group of template strings used to render pager controls and page stats elements.
-
-### pager
+### keyupThrottleDuration
 
 
 
 
+An integer dictating the duration in ms that must elapse between keyup
+events in order to trigger a change.
 
+Setting a comfortable delay of ~350ms prevents the mixer from being
+thrashed while typing occurs.
 
 
 |Type | Default
 |---  | ---
-|`string`| `'<button type="button" class="${classNames}" data-page="${pageNumber}">${pageNumber}</button>'`
-
-### pagerPrev
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`string`| `'<button type="button" class="${classNames}" data-page="prev">&laquo;</button>'`
-
-### pagerNext
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`string`| `'<button type="button" class="${classNames}" data-page="next">&raquo;</button>'`
-
-### pagerTruncationMarker
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`string`| `'<span class="${classNames}">&hellip;</span>'`
-
-### pageStats
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`string`| `'${startPageAt} to ${endPageAt} of ${totalTargets}'`
-
-### pageStatsSingle
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`string`| `'${startPageAt} of ${totalTargets}'`
-
-### pageStatsFail
-
-
-
-
-
-
-
-|Type | Default
-|---  | ---
-|`string`| `'None found'`
+|`number`| `350`
 
 

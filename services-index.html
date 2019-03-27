@@ -199,17 +199,32 @@
       <div class="row">
         <div class="col-md-12">
           <div class="standalone-service">
-            <div class="controls">
-              <a class="control" data-filter="all">Featured</a>
-              <a class="control" data-filter=".advertising">Advertising</a>
-              <a class="control" data-filter=".analytics">Analytics</a>
-              <a class="control" data-filter=".content">Content</a>
-              <a class="control" data-filter=".email">Email</a>
-              <a class="control" data-filter=".seo">SEO</a>
-              <a class="control" data-filter=".social-media">Social Media</a>
-              <a class="control" data-filter=".other">Other</a>
-              <a class="control control-right" data-filter=".my-services">My Services</a>
-            </div>
+              <form class="controls">
+                  <div class="control-toggle">
+                    <a class="control control-featured" data-filter="all">Featured</a>
+                    <a class="control control-advertising" data-filter=".advertising">Advertising</a>
+                    <a class="control control-analytics" data-filter=".analytics">Analytics</a>
+                    <a class="control control-content" data-filter=".content">Content</a>
+                    <a class="control control-email" data-filter=".email">Email</a>
+                    <a class="control control-seo" data-filter=".seo">SEO</a>
+                    <a class="control control-social-media" data-filter=".social-media">Social Media</a>
+                    <a class="control control-other" data-filter=".other">Other</a>
+                    <a class="control control-my-services" data-filter=".my-services">My Services</a>
+                  </div>
+                  <fieldset data-filter-group class="select-wrapper">
+                      <select class="form-control" id="selectFilterServices">
+                          <option value="all">Featured</option>
+                          <option value=".advertising">Advertising</option>
+                          <option value=".analytics">Analytics</option>
+                          <option value=".content">Content</option>
+                          <option value=".email">Email</option>
+                          <option value=".seo">SEO</option>
+                          <option value=".social-media">Social Media</option>
+                          <option value=".other">Other</option>
+                          <option value=".my-services">My Services</option>
+                      </select>
+                  </fieldset>
+              </form>
             <div class="clearfix"></div>
             <div class="container-mixitup row flex-box">
               <div class="mix mix-item-standalone my-services">
@@ -295,7 +310,6 @@
             </div>
             <div class="controls-pagination">
                 <div class="mixitup-page-list"></div>
-                <div class="mixitup-page-stats"></div>
             </div>
           </div>
         </div>
@@ -504,14 +518,19 @@
   <script src="/scripts/lib/fontawesome/all.js"></script>
   <script src="/scripts/lib/mixitup/mixitup.min.js"></script>
   <script src="/scripts/lib/mixitup/pagination/dist/mixitup-pagination.js"></script>
+  <script src="/scripts/lib/mixitup/multifilter/dist/mixitup-multifilter.min.js"></script>
   <script src="/scripts/script.js"></script>
-  <script>
-    var containerEl = document.querySelector('.container-mixitup');
-
-    var mixer = mixitup(containerEl, {
-      pagination: {
-        limit: 8
-      }
+  <script> 
+    $(document).ready(function() {
+      var containerEl = $('.container-mixitup');
+      var mixer = mixitup(containerEl, {
+        pagination: {
+          limit: 8
+        },
+        multifilter: {
+            enable: true // enable the multifilter extension for the mixer
+        }
+      });
     });
   </script>
 </body>

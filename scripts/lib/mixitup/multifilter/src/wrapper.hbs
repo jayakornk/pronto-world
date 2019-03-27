@@ -3,42 +3,20 @@
 (function(window) {
     'use strict';
 
-    var mixitupPagination = function(mixitup) {
+    var mixitupMultifilter = function(mixitup) {
         var h = mixitup.h;
 
         {{>version-check}}
 
-        {{>config-class-names}}
-
-        {{>config-load}}
-
-        {{>config-pagination}}
-
-        {{>config-render}}
-
-        {{>config-selectors}}
-
-        {{>config-templates}}
+        {{>config-multifilter}}
 
         {{>config}}
 
-        {{>model-pager}}
+        {{>multifilter-form-event-tracker}}
 
-        {{>model-page-stats}}
+        {{>filter-group-dom}}
 
-        {{>ui-class-names}}
-
-        {{>control-definition}}
-
-        {{>control}}
-
-        {{>command-multimix}}
-
-        {{>command-paginate}}
-
-        {{>operation}}
-
-        {{>state}}
+        {{>filter-group}}
 
         {{>mixer-dom}}
 
@@ -47,10 +25,10 @@
         {{>facade}}
     };
 
-    mixitupPagination.TYPE                    = 'mixitup-extension';
-    mixitupPagination.NAME                    = '{{name}}';
-    mixitupPagination.EXTENSION_VERSION       = '{{version}}';
-    mixitupPagination.REQUIRE_CORE_VERSION    = '{{coreVersion}}';
+    mixitupMultifilter.TYPE                    = 'mixitup-extension';
+    mixitupMultifilter.NAME                    = '{{name}}';
+    mixitupMultifilter.EXTENSION_VERSION       = '{{version}}';
+    mixitupMultifilter.REQUIRE_CORE_VERSION    = '{{coreVersion}}';
 
     {{>module-definitions}}
 })(window);

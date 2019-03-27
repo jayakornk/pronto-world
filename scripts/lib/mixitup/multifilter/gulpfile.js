@@ -36,21 +36,22 @@ gulp.task('prod', ['uglify']);
 
 gulp.task('uglify', ['build'], function() {
     return gulp.src([
-        './dist/mixitup-pagination.js'
+        './dist/mixitup-multifilter.js'
     ])
         .pipe(uglify({
             preserveComments: 'license'
         }))
-        .pipe(rename('mixitup-pagination.min.js'))
+        .pipe(rename('mixitup-multifilter.min.js'))
         .on('error', function(e) {
             console.error('[uglify] ' + e.message);
         })
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/'))
+        .pipe(gulp.dest('./demos/'));
 });
 
 gulp.task('build', ['build-dist'], function(done) {
-    exec('node node_modules/mixitup-build/docs.js -s mixitup-pagination.js', function(e, out) {
+    exec('node node_modules/mixitup-build/docs.js -s mixitup-multifilter.js', function(e, out) {
         if (out) {
             console.log(out);
         }
@@ -61,7 +62,7 @@ gulp.task('build', ['build-dist'], function(done) {
 
 
 gulp.task('build-dist', ['lint', 'code-style'], function(done) {
-    exec('node node_modules/mixitup-build/dist.js -o mixitup-pagination.js', function(e, out) {
+    exec('node node_modules/mixitup-build/dist.js -o mixitup-multifilter.js', function(e, out) {
         if (out) {
             console.log(out);
         }

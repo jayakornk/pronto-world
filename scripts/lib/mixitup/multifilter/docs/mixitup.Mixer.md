@@ -2,142 +2,115 @@
 
 ## Overview
 
-The MixItUp configuration object is extended with properties relating to
-the Pagination extension.
+The `mixitup.Mixer` class is extended with API methods relating to
+the MultiFilter extension.
 
-For the full list of configuration option properties,
-please refer to the MixItUp core documentation.
+For the full list of API methods, please refer to the MixItUp
+core documentation.
 
 ### Contents
 
-- [paginate()](#paginate)
-- [nextPage()](#nextPage)
-- [prevPage()](#prevPage)
+- [parseFilterGroups()](#parseFilterGroups)
+- [setFilterGroupSelectors()](#setFilterGroupSelectors)
+- [getFilterGroupSelectors()](#getFilterGroupSelectors)
 
 
-<h3 id="paginate">paginate()</h3>
+<h3 id="parseFilterGroups">parseFilterGroups()</h3>
 
+*Version added: 3.0.0*
 
-`.paginate(page [, animate] [, callback])`
+`.parseFilterGroups([animate] [, callback])`
 
-Changes the current page and/or the current page limit.
+Traverses the currently active filters in all groups, building up a
+compound selector string as per the defined logic. A filter operation
+is then called on the mixer using the generated selector.
+
+This method can be used to programmatically trigger the parsing of
+filter groups after manipulations to a group's active selector(s) by
+the `.setFilterGroupSelectors()` API method.
 
 |   |Type | Name | Description
 |---|--- | --- | ---
-|Param   |`number, string, object, HTMLElement` | `page` | A page number, string (`'next'`, `'prev'`), HTML element reference, or command object.
 |Param   |`boolean` | `[animate]` | An optional boolean dictating whether the operation should animate, or occur syncronously with no animation. `true` by default.
 |Param   |`function` | `[callback]` | An optional callback function to be invoked after the operation has completed.
 |Returns |`Promise.<mixitup.State>` | A promise resolving with the current state object.
 
 
-###### Example 1: Changing the active page
+###### Example: Triggering parsing after manually selecting all checkboxes in a group
 
 ```js
 
-console.log(mixer.getState().activePagination.page); // 1
+var checkboxes = Array.from(document.querySelectorAll('.my-group > input[type="checkbox"]'));
 
-mixer.paginate(2)
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.page === 2); // true
-    });
-```
-###### Example 2: Progressing to the next page
+checkboxes.forEach(function(checkbox) {
+    checkbox.checked = true;
+});
 
-```js
-
-console.log(mixer.getState().activePagination.page); // 1
-
-mixer.paginate('next')
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.page === 2); // true
-    });
-```
-###### Example 3: Starting a page from an abitrary "anchor" element
-
-```js
-
-var anchorEl = mixer.getState().show[3];
-
-mixer.paginate(anchorEl)
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.anchor === anchorEl); // true
-        console.log(mixer.getState().show[0] === anchorEl); // true
-    });
-```
-###### Example 4: Changing the page limit
-
-```js
-
-var anchorEl = mixer.getState().show[3];
-
-console.log(mixer.getState().activePagination.limit); // 8
-
-mixer.paginate({
-   limit: 4
-})
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.limit === 4); // true
-    });
-```
-###### Example 5: Changing the active page and page limit
-
-```js
-
-mixer.paginate({
-   limit: 4,
-   page: 2
-})
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.page === 2); // true
-        console.log(mixer.getState().activePagination.limit === 4); // true
-    });
+mixer.parseFilterGroups();
 ```
 
-<h3 id="nextPage">nextPage()</h3>
+<h3 id="setFilterGroupSelectors">setFilterGroupSelectors()</h3>
 
+*Version added: 3.2.0*
 
-`.nextPage()`
+`.setFilterGroupSelectors(groupName, selectors)`
 
-A shorthand for `.paginate('next')`. Moves to the next page.
+Programmatically sets one or more active selectors for a specific filter
+group and updates the group's UI.
+
+Because MixItUp has no way of knowing how to break down a provided
+compound selector into its component groups, we can not use the
+standard `.filter()` or `toggleOn()/toggleOff()` API methods when using
+the MultiFilter extension. Instead, this method allows us to perform
+multi-dimensional filtering via the API by setting the active selectors of
+individual groups and then triggering the `.parseFilterGroups()` method.
+
+If setting multiple active selectors, do not pass a compound selector.
+Instead, pass an array with each item containing a single selector
+string as in example 2.
 
 |   |Type | Name | Description
 |---|--- | --- | ---
-|Returns |`Promise.<mixitup.State>` | A promise resolving with the current state object.
+|Param   |`string` | `groupName` | The name of the filter group as defined in the markup via the `data-filter-group` attribute.
+|Param   |`string, Array.<string>` | `selectors` | A single selector string, or multiple selector strings as an array.
+|Returns |`void` | 
 
 
-###### Example: Moving to the next page
+###### Example 1: Setting a single active selector for a "color" group
 
 ```js
 
-console.log(mixer.getState().activePagination.page); // 1
+mixer.setFilterGroupSelectors('color', '.green');
 
-mixer.nextPage()
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.page === 2); // true
-    });
+mixer.parseFilterGroups();
+```
+###### Example 2: Setting multiple active selectors for a "size" group
+
+```js
+
+mixer.setFilterGroupSelectors('size', ['.small', '.large']);
+
+mixer.parseFilterGroups();
 ```
 
-<h3 id="prevPage">prevPage()</h3>
+<h3 id="getFilterGroupSelectors">getFilterGroupSelectors()</h3>
 
+*Version added: 3.2.0*
 
-`.prevPage()`
+`.getFilterGroupSelectors(groupName)`
 
-A shorthand for `.paginate('prev')`. Moves to the previous page.
+Returns an array of active selectors for a specific filter group.
 
 |   |Type | Name | Description
 |---|--- | --- | ---
-|Returns |`Promise.<mixitup.State>` | A promise resolving with the current state object.
+|Param   |`string` | `groupName` | The name of the filter group as defined in the markup via the `data-filter-group` attribute.
+|Returns |`void` | 
 
 
-###### Example: Moving to the previous page
+###### Example: Retrieving the active selectors for a "size" group
 
 ```js
 
-console.log(mixer.getState().activePagination.page); // 5
-
-mixer.prevtPage()
-    .then(function(state) {
-        console.log(mixer.getState().activePagination.page === 4); // true
-    });
+mixer.getFilterGroupSelectors('size'); // ['.small', '.large']
 ```
 
